@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# cr-app (Cranium Tribute)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+cr-app is a tribute web app inspired by the classic party game format. It delivers four color-coded challenge categories, a randomized card draw per category, and a simple way to grow the card library over time. The project avoids trademarked names and keeps all data local so the site can be built and hosted as static files.
 
-Currently, two official plugins are available:
+The current focus is documentation and requirements. Implementation will follow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Goals
+- Provide four category experiences with the same colors: blue, red, green, yellow.
+- Support i18n (Spanish + English first) for UI and card content.
+- Allow modular growth: new cards, new groups, and future new category types.
+- Keep card data inside the repo (no external database).
 
-## React Compiler
+## Repository notes
+- `card_references/` contains reference images and OCR text outputs (`.txt`) for each card face.
+- `requirements.md` defines the product roadmap, epics, and user stories.
+- `agents.md` explains constraints and project rules for contributors.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Running locally
+This project uses Vite + React + TypeScript.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Data and authoring
+Card authoring is done through a local CLI script that can:
+- List available cards and groups.
+- Add a new card in one language or many.
+- Query by category, language, or group set.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The CLI is documented in `docs/card-authoring.md`.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Category color mapping
+This tribute uses color names in the code. The colors correspond to the original category labels in the classic game:
+- Blue: creative category (original name: Gato Creativo).
+- Red: trivia category (original name: Dato Nauta).
+- Green: performance category (original name: Star Estelar).
+- Yellow: wordplay category (original name: Lombri Letras).
+
+## Planned CLI scripts
+These scripts will be added so cards can be managed without editing code:
+- `pnpm cards:add` (create a new card)
+- `pnpm cards:update` (update an existing card)
+- `pnpm cards:remove` (remove a card)
+- `pnpm cards:list` (query by category, language, or group)
+
+## Legal note
+This project is a tribute inspired by a well-known board game format. It does not use trademarked category names or brand assets.

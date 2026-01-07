@@ -7,7 +7,21 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cards": "node scripts/cards-cli.cjs",
+    "cards:list": "node scripts/cards-cli.cjs cards list",
+    "cards:add": "node scripts/cards-cli.cjs cards add",
+    "cards:update": "node scripts/cards-cli.cjs cards update",
+    "cards:remove": "node scripts/cards-cli.cjs cards remove",
+    "cards:missing": "node scripts/cards-cli.cjs cards missing",
+    "types:list": "node scripts/cards-cli.cjs types list",
+    "types:add": "node scripts/cards-cli.cjs types add",
+    "types:update": "node scripts/cards-cli.cjs types update",
+    "types:remove": "node scripts/cards-cli.cjs types remove",
+    "categories:list": "node scripts/cards-cli.cjs categories list",
+    "categories:add": "node scripts/cards-cli.cjs categories add",
+    "categories:update": "node scripts/cards-cli.cjs categories update",
+    "categories:remove": "node scripts/cards-cli.cjs categories remove"
   },
   "dependencies": {
     "react": "^19.2.0",

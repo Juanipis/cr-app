@@ -1,0 +1,1243 @@
+{
+  "categories": [
+    {
+      "id": "blue",
+      "name": {
+        "es": "Azul",
+        "en": "Blue"
+      },
+      "colorHex": "#1e88e5"
+    },
+    {
+      "id": "red",
+      "name": {
+        "es": "Rojo",
+        "en": "Red"
+      },
+      "colorHex": "#e53935"
+    },
+    {
+      "id": "green",
+      "name": {
+        "es": "Verde",
+        "en": "Green"
+      },
+      "colorHex": "#43a047"
+    },
+    {
+      "id": "yellow",
+      "name": {
+        "es": "Amarillo",
+        "en": "Yellow"
+      },
+      "colorHex": "#fdd835"
+    }
+  ],
+  "cardTypes": [
+    {
+      "id": "blue_dibu_ciego",
+      "categoryId": "blue",
+      "name": {
+        "es": "Dibu-ciego"
+      },
+      "activity": {
+        "es": "Para ganar este Dibu-ciego, el equipo elige a un jugador. Debe lograr que su equipo adivine la respuesta del dorso dibujando con los ojos cerrados. No se puede abrir los ojos, usar letras o símbolos, ni hablar. Se lee la pista, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "blue_molde_mudo",
+      "categoryId": "blue",
+      "name": {
+        "es": "Molde mudo"
+      },
+      "activity": {
+        "es": "Para ganar este Molde mudo, el equipo elige a un jugador. Debe lograr que su equipo adivine la respuesta del dorso modelando con masa. No se puede hablar ni hacer gestos (se puede mover la masa). Se lee la pista, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "blue_pinta_silencio",
+      "categoryId": "blue",
+      "name": {
+        "es": "Pinta-silencio"
+      },
+      "activity": {
+        "es": "Para ganar este Pinta-silencio, el equipo elige a un jugador. Debe lograr que su equipo adivine la respuesta del dorso pintando sin hablar. No se pueden usar letras ni símbolos. Se lee la pista, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "blue_todos_juegan",
+      "categoryId": "blue",
+      "name": {
+        "es": "Todos juegan"
+      },
+      "activity": {
+        "es": "Todos los equipos juegan al mismo tiempo. El equipo ganador recibe un tiro extra y avanza. Si el equipo que sacó la tarjeta no gana, debe sacar otra tarjeta de la misma categoría."
+      },
+      "mode": "all-play"
+    },
+    {
+      "id": "red_elige_una",
+      "categoryId": "red",
+      "name": {
+        "es": "Elige-una"
+      },
+      "activity": {
+        "es": "Para ganar este Elige-una, el equipo debe adivinar cuál opción es la respuesta correcta. Se lee la pregunta y las opciones, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "red_sobran_dos",
+      "categoryId": "red",
+      "name": {
+        "es": "Sobran-dos"
+      },
+      "activity": {
+        "es": "Para ganar este Sobran-dos, el equipo debe elegir correctamente las dos opciones que sobran de la lista. Se lee la categoría y la lista, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "red_pregunta_directa",
+      "categoryId": "red",
+      "name": {
+        "es": "Pregunta directa"
+      },
+      "activity": {
+        "es": "Para ganar esta Pregunta directa, el equipo debe responder correctamente a la pregunta. Se lee la pregunta, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "red_verdadero_no",
+      "categoryId": "red",
+      "name": {
+        "es": "Verdadero o no"
+      },
+      "activity": {
+        "es": "Para ganar este Verdadero o no, el equipo debe decidir si la afirmación es verdadera o falsa. Se lee la afirmación, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "green_mimo_total",
+      "categoryId": "green",
+      "name": {
+        "es": "Mimo total"
+      },
+      "activity": {
+        "es": "Para ganar este Mimo total, el equipo elige a un jugador. Debe lograr que su equipo adivine la respuesta del dorso usando solo mímica y en completo silencio. Se lee la pista, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "green_imita_voz",
+      "categoryId": "green",
+      "name": {
+        "es": "Imita-voz"
+      },
+      "activity": {
+        "es": "Para ganar este Imita-voz, el equipo elige a un jugador. Debe lograr que su equipo adivine el personaje del dorso imitándolo. Puede hablar, pero sin decir nombres propios ni lugares. Se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "green_tararea",
+      "categoryId": "green",
+      "name": {
+        "es": "Tararea"
+      },
+      "activity": {
+        "es": "Para ganar este Tararea, el equipo elige a un jugador. Debe lograr que su equipo adivine el título de la canción tarareando con la boca cerrada o silbando, sin gestos ni letra. Se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "green_titiril",
+      "categoryId": "green",
+      "name": {
+        "es": "Titiril"
+      },
+      "activity": {
+        "es": "Para ganar este Titiril, el equipo elige a un jugador. Debe lograr que su equipo adivine la respuesta del dorso usando un objeto como marioneta. Puede hacer sonidos con la boca, pero no puede hablar. Se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "green_todos_juegan",
+      "categoryId": "green",
+      "name": {
+        "es": "Todos juegan"
+      },
+      "activity": {
+        "es": "Todos los equipos juegan al mismo tiempo. El equipo ganador recibe un tiro extra y avanza. Si el equipo que sacó la tarjeta no gana, debe sacar otra tarjeta de la misma categoría."
+      },
+      "mode": "all-play"
+    },
+    {
+      "id": "yellow_faltan_letras",
+      "categoryId": "yellow",
+      "name": {
+        "es": "Faltan letras"
+      },
+      "activity": {
+        "es": "Para ganar este Faltan letras, el equipo debe resolver el enigma descubriendo las letras que faltan. Se lee la pista, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "yellow_defini_duelo",
+      "categoryId": "yellow",
+      "name": {
+        "es": "Defini-duelo"
+      },
+      "activity": {
+        "es": "Para ganar este Defini-duelo, el equipo debe adivinar cuál definición es la correcta para la palabra. Se lee la palabra y las definiciones, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "yellow_anagrama",
+      "categoryId": "yellow",
+      "name": {
+        "es": "Anagrama"
+      },
+      "activity": {
+        "es": "Para ganar este Anagrama, el equipo debe desentrañar el anagrama reordenando las letras. Los acentos y signos de puntuación no cuentan. Se lee la pista y el anagrama, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "yellow_piensa_junto",
+      "categoryId": "yellow",
+      "name": {
+        "es": "Piensa-junto"
+      },
+      "activity": {
+        "es": "Para ganar este Piensa-junto, dos o más jugadores de cada equipo deben coincidir al menos en una respuesta. Cada miembro escribe tres palabras sobre el tema. Se lee el tema, se entrega la tarjeta y se voltea el reloj."
+      },
+      "mode": "team"
+    },
+    {
+      "id": "yellow_al_reves",
+      "categoryId": "yellow",
+      "name": {
+        "es": "Al-reves"
+      },
+      "activity": {
+        "es": "Para ganar este Al-reves, el equipo debe deletrear al revés la palabra a la primera, sin escribirla y sin olvidar acentos. Los jugadores se alternan y dicen una letra en su turno. Se lee la palabra y se voltea el reloj."
+      },
+      "mode": "team"
+    }
+  ],
+  "cards": [
+    {
+      "id": "blue_dibu_ciego_001",
+      "typeId": "blue_dibu_ciego",
+      "groups": [
+        "colombia",
+        "urbano",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "TRANSPORTE"
+            }
+          ],
+          "answer": "TransMilenio"
+        }
+      }
+    },
+    {
+      "id": "blue_dibu_ciego_002",
+      "typeId": "blue_dibu_ciego",
+      "groups": [
+        "cultura-pop",
+        "tecnologia"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "APP"
+            }
+          ],
+          "answer": "Aplicacion de mensajeria"
+        }
+      }
+    },
+    {
+      "id": "blue_dibu_ciego_003",
+      "typeId": "blue_dibu_ciego",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "GESTO"
+            }
+          ],
+          "answer": "Selfie en espejo"
+        }
+      }
+    },
+    {
+      "id": "blue_molde_mudo_001",
+      "typeId": "blue_molde_mudo",
+      "groups": [
+        "colombia",
+        "tradicion"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "COMIDA"
+            }
+          ],
+          "answer": "Arepa con queso"
+        }
+      }
+    },
+    {
+      "id": "blue_molde_mudo_002",
+      "typeId": "blue_molde_mudo",
+      "groups": [
+        "cultura-pop",
+        "hogar"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "OBJETO"
+            }
+          ],
+          "answer": "Control remoto"
+        }
+      }
+    },
+    {
+      "id": "blue_molde_mudo_003",
+      "typeId": "blue_molde_mudo",
+      "groups": [
+        "colombia",
+        "fiesta"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "BEBIDA"
+            }
+          ],
+          "answer": "Limonada de coco"
+        }
+      }
+    },
+    {
+      "id": "blue_pinta_silencio_001",
+      "typeId": "blue_pinta_silencio",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "OBJETO"
+            }
+          ],
+          "answer": "Patineta electrica"
+        }
+      }
+    },
+    {
+      "id": "blue_pinta_silencio_002",
+      "typeId": "blue_pinta_silencio",
+      "groups": [
+        "colombia",
+        "fiesta"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "LUGAR"
+            }
+          ],
+          "answer": "Ciclovia dominical"
+        }
+      }
+    },
+    {
+      "id": "blue_pinta_silencio_003",
+      "typeId": "blue_pinta_silencio",
+      "groups": [
+        "cultura-pop"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "TENDENCIA"
+            }
+          ],
+          "answer": "Videos verticales"
+        }
+      }
+    },
+    {
+      "id": "blue_todos_juegan_001",
+      "typeId": "blue_todos_juegan",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "PERSONAJE"
+            }
+          ],
+          "answer": "Creador de contenido"
+        }
+      }
+    },
+    {
+      "id": "red_elige_una_001",
+      "typeId": "red_elige_una",
+      "groups": [
+        "cultura-pop",
+        "tecnologia"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PREGUNTA",
+              "text": "¿Qué plataforma es conocida por videos cortos en formato vertical?"
+            },
+            {
+              "label": "OPCIONES",
+              "list": [
+                "A Twitch",
+                "B TikTok",
+                "C Wikipedia",
+                "D Slack"
+              ]
+            }
+          ],
+          "answer": "B TikTok"
+        }
+      }
+    },
+    {
+      "id": "red_elige_una_002",
+      "typeId": "red_elige_una",
+      "groups": [
+        "colombia",
+        "cultura-pop"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PREGUNTA",
+              "text": "¿Cuál ciudad es famosa por su sistema de ciclovia dominical?"
+            },
+            {
+              "label": "OPCIONES",
+              "list": [
+                "A Cali",
+                "B Medellin",
+                "C Bogota",
+                "D Cartagena"
+              ]
+            }
+          ],
+          "answer": "C Bogota"
+        }
+      }
+    },
+    {
+      "id": "red_elige_una_003",
+      "typeId": "red_elige_una",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PREGUNTA",
+              "text": "¿Qué emoji suele usarse para pedir \"pasame la sal\" en memes?"
+            },
+            {
+              "label": "OPCIONES",
+              "list": [
+                "A Corazon rojo",
+                "B Calavera",
+                "C Carita llorando",
+                "D Berenjena"
+              ]
+            }
+          ],
+          "answer": "B Calavera"
+        }
+      }
+    },
+    {
+      "id": "red_sobran_dos_001",
+      "typeId": "red_sobran_dos",
+      "groups": [
+        "tecnologia"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "CATEGORIA",
+              "text": "LENGUAJES DE PROGRAMACION"
+            },
+            {
+              "label": "LISTA",
+              "list": [
+                "Python",
+                "Rust",
+                "Java",
+                "Photoshop",
+                "React"
+              ]
+            }
+          ],
+          "answer": "Photoshop y React"
+        }
+      }
+    },
+    {
+      "id": "red_sobran_dos_002",
+      "typeId": "red_sobran_dos",
+      "groups": [
+        "colombia",
+        "tradicion"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "CATEGORIA",
+              "text": "COMIDAS TIPICAS"
+            },
+            {
+              "label": "LISTA",
+              "list": [
+                "Bandeja paisa",
+                "Ajiaco",
+                "Sushi",
+                "Tamal",
+                "Ramen"
+              ]
+            }
+          ],
+          "answer": "Sushi y Ramen"
+        }
+      }
+    },
+    {
+      "id": "red_sobran_dos_003",
+      "typeId": "red_sobran_dos",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "CATEGORIA",
+              "text": "APPS DE MENSAJERIA"
+            },
+            {
+              "label": "LISTA",
+              "list": [
+                "WhatsApp",
+                "Telegram",
+                "Signal",
+                "Spotify",
+                "Discord"
+              ]
+            }
+          ],
+          "answer": "Spotify y Discord"
+        }
+      }
+    },
+    {
+      "id": "red_pregunta_directa_001",
+      "typeId": "red_pregunta_directa",
+      "groups": [
+        "colombia"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PREGUNTA",
+              "text": "¿En que ciudad se celebra la Feria de las Flores?"
+            }
+          ],
+          "answer": "Medellin"
+        }
+      }
+    },
+    {
+      "id": "red_pregunta_directa_002",
+      "typeId": "red_pregunta_directa",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PREGUNTA",
+              "text": "¿Como se llama el formato de video en el que se mueve la camara sobre un mini set?"
+            }
+          ],
+          "answer": "Stop motion"
+        }
+      }
+    },
+    {
+      "id": "red_verdadero_no_001",
+      "typeId": "red_verdadero_no",
+      "groups": [
+        "tecnologia"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "AFIRMACION",
+              "text": "El 5G es mas rapido que el 4G."
+            }
+          ],
+          "answer": "Verdadero"
+        }
+      }
+    },
+    {
+      "id": "red_verdadero_no_002",
+      "typeId": "red_verdadero_no",
+      "groups": [
+        "cultura-pop"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "AFIRMACION",
+              "text": "Un meme solo puede ser una imagen."
+            }
+          ],
+          "answer": "Falso"
+        }
+      }
+    },
+    {
+      "id": "green_mimo_total_001",
+      "typeId": "green_mimo_total",
+      "groups": [
+        "cultura-pop"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "PELICULA"
+            }
+          ],
+          "answer": "Oppenheimer"
+        }
+      }
+    },
+    {
+      "id": "green_mimo_total_002",
+      "typeId": "green_mimo_total",
+      "groups": [
+        "colombia",
+        "cultura-pop"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "LUGAR"
+            }
+          ],
+          "answer": "Parque de la 93"
+        }
+      }
+    },
+    {
+      "id": "green_mimo_total_003",
+      "typeId": "green_mimo_total",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "SERIE"
+            }
+          ],
+          "answer": "La casa de papel"
+        }
+      }
+    },
+    {
+      "id": "green_imita_voz_001",
+      "typeId": "green_imita_voz",
+      "groups": [
+        "cultura-pop",
+        "musica"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PERSONAJE",
+              "text": "Cantante"
+            }
+          ],
+          "answer": "Karol G"
+        }
+      }
+    },
+    {
+      "id": "green_imita_voz_002",
+      "typeId": "green_imita_voz",
+      "groups": [
+        "cultura-pop",
+        "tecnologia"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PERSONAJE",
+              "text": "Comediante"
+            }
+          ],
+          "answer": "Un comediante de stand up"
+        }
+      }
+    },
+    {
+      "id": "green_imita_voz_003",
+      "typeId": "green_imita_voz",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PERSONAJE",
+              "text": "Influencer"
+            }
+          ],
+          "answer": "Streamer de videojuegos"
+        }
+      }
+    },
+    {
+      "id": "green_tararea_001",
+      "typeId": "green_tararea",
+      "groups": [
+        "cultura-pop",
+        "musica"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "CANCION"
+            }
+          ],
+          "answer": "Flowers"
+        }
+      }
+    },
+    {
+      "id": "green_tararea_002",
+      "typeId": "green_tararea",
+      "groups": [
+        "colombia",
+        "musica"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "CANCION"
+            }
+          ],
+          "answer": "La bicicleta"
+        }
+      }
+    },
+    {
+      "id": "green_titiril_001",
+      "typeId": "green_titiril",
+      "groups": [
+        "cultura-pop",
+        "hogar"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "OBJETO"
+            }
+          ],
+          "answer": "Cepillo de dientes"
+        }
+      }
+    },
+    {
+      "id": "green_todos_juegan_001",
+      "typeId": "green_todos_juegan",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "EVENTO"
+            }
+          ],
+          "answer": "Final de un reality musical"
+        }
+      }
+    },
+    {
+      "id": "yellow_faltan_letras_001",
+      "typeId": "yellow_faltan_letras",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "FORMA DE PAGO DIGITAL"
+            },
+            {
+              "label": "ENIGMA",
+              "text": "_ I _ I _ _ A _ R _ A"
+            }
+          ],
+          "answer": "Billetera"
+        }
+      }
+    },
+    {
+      "id": "yellow_faltan_letras_002",
+      "typeId": "yellow_faltan_letras",
+      "groups": [
+        "colombia",
+        "urbano"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "LUGAR PARA COMER"
+            },
+            {
+              "label": "ENIGMA",
+              "text": "_ E _ T _ _ R _ N _ _"
+            }
+          ],
+          "answer": "Restaurante"
+        }
+      }
+    },
+    {
+      "id": "yellow_defini_duelo_001",
+      "typeId": "yellow_defini_duelo",
+      "groups": [
+        "cultura-pop",
+        "tecnologia"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PALABRA",
+              "text": "STORY"
+            },
+            {
+              "label": "OPCIONES",
+              "list": [
+                "A publicacion temporal",
+                "B foto impresa",
+                "C mensaje privado",
+                "D video largo"
+              ]
+            }
+          ],
+          "answer": "A publicacion temporal"
+        }
+      }
+    },
+    {
+      "id": "yellow_defini_duelo_002",
+      "typeId": "yellow_defini_duelo",
+      "groups": [
+        "cultura-pop",
+        "musica"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PALABRA",
+              "text": "FEAT"
+            },
+            {
+              "label": "OPCIONES",
+              "list": [
+                "A colaboracion musical",
+                "B pausa comercial",
+                "C version acustica",
+                "D error de sonido"
+              ]
+            }
+          ],
+          "answer": "A colaboracion musical"
+        }
+      }
+    },
+    {
+      "id": "yellow_anagrama_001",
+      "typeId": "yellow_anagrama",
+      "groups": [
+        "cultura-pop"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "EVENTO DE EMPRENDIMIENTO"
+            },
+            {
+              "label": "ANAGRAMA",
+              "text": "MERCADO DE FERIA"
+            }
+          ],
+          "answer": "Feria de mercado"
+        }
+      }
+    },
+    {
+      "id": "yellow_anagrama_002",
+      "typeId": "yellow_anagrama",
+      "groups": [
+        "colombia",
+        "cultura-pop"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PISTA",
+              "text": "FESTIVAL EN MEDELLIN"
+            },
+            {
+              "label": "ANAGRAMA",
+              "text": "FLORES LA FERIA"
+            }
+          ],
+          "answer": "Feria de las flores"
+        }
+      }
+    },
+    {
+      "id": "yellow_piensa_junto_001",
+      "typeId": "yellow_piensa_junto",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "TEMA",
+              "text": "COSAS QUE HACES ANTES DE UN ZOOM"
+            }
+          ],
+          "answer": "Respuesta abierta (ejemplos: probar audio, peinarse, buscar fondo)"
+        }
+      }
+    },
+    {
+      "id": "yellow_piensa_junto_002",
+      "typeId": "yellow_piensa_junto",
+      "groups": [
+        "colombia",
+        "cultura-pop"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "TEMA",
+              "text": "COSAS TIPICAS DE UNA FERIA DE PUEBLO"
+            }
+          ],
+          "answer": "Respuesta abierta (ejemplos: fritos, musica en vivo, rifas)"
+        }
+      }
+    },
+    {
+      "id": "yellow_al_reves_001",
+      "typeId": "yellow_al_reves",
+      "groups": [
+        "cultura-pop",
+        "tecnologia"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PALABRA",
+              "text": "PODCAST"
+            }
+          ],
+          "answer": "TSACDOP"
+        }
+      }
+    },
+    {
+      "id": "yellow_al_reves_002",
+      "typeId": "yellow_al_reves",
+      "groups": [
+        "colombia",
+        "tradicion"
+      ],
+      "languages": [
+        "es"
+      ],
+      "createdAt": "2024-11-15",
+      "content": {
+        "es": {
+          "blocks": [
+            {
+              "label": "PALABRA",
+              "text": "CHOCOLATE"
+            }
+          ],
+          "answer": "ETALOCOHC"
+        }
+      }
+    }
+  ]
+}
