@@ -173,6 +173,35 @@ pnpm categories:remove --id purple
 
 Note: a category cannot be removed if types still reference it.
 
+## Managing group sets
+Group sets are curated combinations of group tags for quick play.
+
+### List sets
+```bash
+pnpm sets:list
+```
+
+### Add a set
+Create `tmp/new-set.json`:
+```json
+{
+  "id": "colombia-urbano",
+  "groups": ["colombia", "urbano"],
+  "label": { "es": "Colombia urbano", "en": "Colombia urban" }
+}
+```
+
+Then run:
+```bash
+pnpm sets:add --input tmp/new-set.json
+```
+
+### Update or remove a set
+```bash
+pnpm sets:update --id colombia-urbano --input tmp/set-patch.json --merge
+pnpm sets:remove --id colombia-urbano
+```
+
 ## Translation workflow
 - Add cards in one language first if needed.
 - Use `pnpm cards:missing --language en` to find gaps.

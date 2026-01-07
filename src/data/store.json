@@ -1239,5 +1239,59 @@
         }
       }
     }
+  ],
+  "groupSets": [
+    {
+      "id": "colombia-urbano",
+      "groups": [
+        "colombia",
+        "urbano"
+      ],
+      "label": {
+        "es": "Colombia urbano",
+        "en": "Colombia urban"
+      }
+    },
+    {
+      "id": "cultura-pop-2020s",
+      "groups": [
+        "cultura-pop",
+        "2020s"
+      ],
+      "label": {
+        "es": "Cultura pop 2020s",
+        "en": "Pop culture 2020s"
+      }
+    },
+    {
+      "id": "musica",
+      "groups": [
+        "musica"
+      ],
+      "label": {
+        "es": "Musica",
+        "en": "Music"
+      }
+    },
+    {
+      "id": "tecnologia",
+      "groups": [
+        "tecnologia"
+      ],
+      "label": {
+        "es": "Tecnologia",
+        "en": "Technology"
+      }
+    },
+    {
+      "id": "tradicion",
+      "groups": [
+        "tradicion"
+      ],
+      "label": {
+        "es": "Tradicion",
+        "en": "Tradition"
+      }
+    }
   ]
 }

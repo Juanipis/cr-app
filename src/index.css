@@ -1,68 +1,101 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Spline+Sans:wght@400;600;700&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --background: 38 40% 97%;
+    --foreground: 222 22% 12%;
+    --muted: 42 30% 92%;
+    --muted-foreground: 222 10% 38%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 22% 12%;
+    --border: 215 16% 82%;
+    --ring: 220 70% 50%;
+
+    --blue: 211 86% 52%;
+    --red: 5 77% 52%;
+    --green: 142 47% 45%;
+    --yellow: 45 96% 54%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 12%;
+    --primary: 222 22% 12%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 42 30% 92%;
+    --secondary-foreground: 222 22% 12%;
+    --accent: 212 30% 92%;
+    --accent-foreground: 222 22% 12%;
+    --destructive: 0 78% 57%;
+    --destructive-foreground: 0 0% 100%;
+    --input: 215 16% 82%;
+    --chart-1: 211 86% 52%;
+    --chart-2: 5 77% 52%;
+    --chart-3: 142 47% 45%;
+    --chart-4: 45 96% 54%;
+    --chart-5: 240 16% 70%;
+    --radius: 0.75rem;
   }
-  a:hover {
-    color: #747bff;
+
+  * {
+    @apply border-border;
   }
-  button {
-    background-color: #f9f9f9;
+
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-body antialiased;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .card-surface {
+    @apply rounded-3xl border border-white/60 bg-white/80 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.4)] backdrop-blur;
+  }
+
+  .panel-title {
+    @apply text-xl font-semibold uppercase tracking-[0.2em] text-white/90;
+  }
+
+}
+
+@layer utilities {
+  .card-pop {
+    animation: card-pop 0.45s ease-out;
+  }
+  .shuffle-card {
+    animation: shuffle 0.7s ease-in-out infinite;
+  }
+  .shuffle-delay-150 {
+    animation-delay: 0.15s;
+  }
+  .shuffle-delay-300 {
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes shuffle {
+  0% {
+    transform: translate(-50%, -50%) rotate(-3deg) scale(0.98);
+  }
+  35% {
+    transform: translate(-48%, -55%) rotate(2deg) scale(1);
+  }
+  70% {
+    transform: translate(-52%, -48%) rotate(-1deg) scale(0.99);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-3deg) scale(0.98);
+  }
+}
+
+@keyframes card-pop {
+  0% {
+    transform: translateY(14px) scale(0.96);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 }

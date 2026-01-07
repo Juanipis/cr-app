@@ -23,6 +23,7 @@ function loadStore() {
   store.categories = store.categories || []
   store.cardTypes = store.cardTypes || []
   store.cards = store.cards || []
+  store.groupSets = store.groupSets || []
   return store
 }
 
@@ -322,7 +323,7 @@ function removeCategory(store, categoryId) {
 }
 
 function showHelp() {
-  console.log(`\nCards CLI\n\nCommands:\n  cards list [--category id] [--type id] [--group tag] [--language code] [--missing-language code] [--json]\n  cards add --input path\n  cards update --id id --input path [--merge]\n  cards remove --id id\n  cards missing --language code [--json]\n\n  types list [--json]\n  types add --input path\n  types update --id id --input path [--merge]\n  types remove --id id\n\n  categories list [--json]\n  categories add --input path\n  categories update --id id --input path [--merge]\n  categories remove --id id\n\nStore:\n  ${STORE_PATH}\n`)
+  console.log(`\nCards CLI\n\nCommands:\n  cards list [--category id] [--type id] [--group tag] [--language code] [--missing-language code] [--json]\n  cards add --input path\n  cards update --id id --input path [--merge]\n  cards remove --id id\n  cards missing --language code [--json]\n\n  types list [--json]\n  types add --input path\n  types update --id id --input path [--merge]\n  types remove --id id\n\n  categories list [--json]\n  categories add --input path\n  categories update --id id --input path [--merge]\n  categories remove --id id\n\n  sets list [--json]\n  sets add --input path\n  sets update --id id --input path [--merge]\n  sets remove --id id\n\nStore:\n  ${STORE_PATH}\n`)
 }
 
 function main() {
@@ -419,6 +420,64 @@ function main() {
     if (subcommand === 'remove') {
       if (!args.id) fail('categories remove requires --id')
       removeCategory(store, args.id)
+      output(`Removed ${args.id}`)
+      return
+    }
+  }
+
+  if (command === 'sets') {
+    if (subcommand === 'list') {
+      const payload = args.json
+        ? store.groupSets
+        : store.groupSets.map((set) =>
+            [set.id, `groups=${set.groups.join(',') || 'none'}`].join(' | '),
+          )
+      output(payload, args.json)
+      return
+    }
+    if (subcommand === 'add') {
+      if (!args.input) fail('sets add requires --input')
+      const set = readJson(args.input)
+      if (!set.id) fail('Set must include id.')
+      if (!Array.isArray(set.groups)) fail('Set groups must be an array.')
+      if (store.groupSets.find((item) => item.id === set.id)) {
+        fail(`Set id already exists: ${set.id}`)
+      }
+      store.groupSets.push(set)
+      saveStore(store)
+      output(set, args.json)
+      return
+    }
+    if (subcommand === 'update') {
+      if (!args.id || !args.input) fail('sets update requires --id and --input')
+      const index = store.groupSets.findIndex((set) => set.id === args.id)
+      if (index === -1) fail(`Set not found: ${args.id}`)
+      const payload = readJson(args.input)
+      if (payload.id && payload.id !== args.id) {
+        fail(`Payload id ${payload.id} does not match ${args.id}`)
+      }
+      let updated = payload
+      if (args.merge) {
+        const current = store.groupSets[index]
+        updated = { ...current, ...payload }
+        if (payload.label) updated.label = { ...current.label, ...payload.label }
+        if (payload.groups) updated.groups = payload.groups
+      }
+      if (!updated.id) fail('Set must include id.')
+      if (!Array.isArray(updated.groups)) fail('Set groups must be an array.')
+      store.groupSets[index] = updated
+      saveStore(store)
+      output(updated, args.json)
+      return
+    }
+    if (subcommand === 'remove') {
+      if (!args.id) fail('sets remove requires --id')
+      const next = store.groupSets.filter((set) => set.id !== args.id)
+      if (next.length === store.groupSets.length) {
+        fail(`Set not found: ${args.id}`)
+      }
+      store.groupSets = next
+      saveStore(store)
       output(`Removed ${args.id}`)
       return
     }

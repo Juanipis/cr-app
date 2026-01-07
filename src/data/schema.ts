@@ -10,6 +10,12 @@ export interface CardCategory {
   colorHex: string
 }
 
+export interface GroupSet {
+  id: string
+  groups: string[]
+  label: LocalizedString
+}
+
 export interface CardType {
   id: string
   categoryId: string

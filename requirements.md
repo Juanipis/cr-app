@@ -85,7 +85,7 @@ Acceptance:
 3. Build CLI for listing, grouping, and adding cards. (done)
 4. Build UI with i18n and four-quadrant layout. (planned)
 5. Add shuffle and flip animations. (planned)
-6. Expand groups and add new content sets. (planned)
+6. Expand groups and add new content sets. (done)
 
 ## Open questions
 - Should group identifiers be English-only (stable IDs) with localized display strings?
