@@ -208,6 +208,9 @@ pnpm sets:remove --id colombia-urbano
 - Provide translated `content` blocks and `answer` for the target language.
 - Update `languages` to include the new language code.
 
+## AI prompt
+Use `docs/ai-card-prompt.md` when generating new cards with AI.
+
 ## ID conventions
 - Categories: color name (e.g. `blue`).
 - Types: `color_slug` (e.g. `blue_dibu_ciego`).

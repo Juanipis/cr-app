@@ -20,5 +20,6 @@ This repository builds a static tribute web app inspired by a classic party game
 ## Workflow
 - Read `requirements.md` before implementing new features.
 - Follow `docs/card-authoring.md` for card data and CLI usage.
+- Use `docs/ai-card-prompt.md` for AI-generated card content.
 - Keep documentation in English.
 - Do not remove or alter `card_references/` OCR files unless explicitly asked.
