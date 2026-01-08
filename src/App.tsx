@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Separator } from '@/components/ui/separator'
+import { Switch } from '@/components/ui/switch'
 import { categories, cardTypes, cards, groupSets } from '@/data/seed'
 import { cn } from '@/lib/utils'
 
@@ -19,6 +20,7 @@ const uiText = {
     languageLabel: 'Idioma',
     groupsLabel: 'Grupos',
     setsLabel: 'Sets',
+    avoidRepeats: 'No repetir en la partida',
     tapToDraw: 'Toca para sacar',
     cardsAvailable: 'cartas disponibles',
     drawAnother: 'Sacar otra',
@@ -38,6 +40,7 @@ const uiText = {
     languageLabel: 'Language',
     groupsLabel: 'Groups',
     setsLabel: 'Sets',
+    avoidRepeats: 'Avoid repeats this round',
     tapToDraw: 'Tap to draw',
     cardsAvailable: 'cards available',
     drawAnother: 'Draw another',
@@ -59,6 +62,8 @@ function App() {
   const [activeCardId, setActiveCardId] = useState<string | null>(null)
   const [isFlipped, setIsFlipped] = useState(false)
   const [isShuffling, setIsShuffling] = useState(false)
+  const [avoidRepeats, setAvoidRepeats] = useState(true)
+  const [usedCardIds, setUsedCardIds] = useState<string[]>([])
   const shuffleTimer = useRef<number | null>(null)
 
   useEffect(() => {
@@ -77,6 +82,21 @@ function App() {
     return Array.from(set).sort((a, b) => a.localeCompare(b))
   }, [])
 
+  const getCardsForCategory = (categoryId: string) => {
+    const typeIds = cardTypes
+      .filter((type) => type.categoryId === categoryId)
+      .map((type) => type.id)
+    return cards.filter((card) => {
+      if (!typeIds.includes(card.typeId)) return false
+      if (selectedGroups.length > 0) {
+        if (!selectedGroups.every((group) => card.groups.includes(group))) {
+          return false
+        }
+      }
+      return Boolean(card.content?.[language])
+    })
+  }
+
   const filteredCards = useMemo(() => {
     let pool = cards
     if (selectedCategory) {
@@ -94,20 +114,13 @@ function App() {
     return pool
   }, [selectedCategory, selectedGroups, language])
 
-  const getCardsForCategory = (categoryId: string) => {
-    const typeIds = cardTypes
-      .filter((type) => type.categoryId === categoryId)
-      .map((type) => type.id)
-    return cards.filter((card) => {
-      if (!typeIds.includes(card.typeId)) return false
-      if (selectedGroups.length > 0) {
-        if (!selectedGroups.every((group) => card.groups.includes(group))) {
-          return false
-        }
-      }
-      return Boolean(card.content?.[language])
-    })
-  }
+  const availableCards = useMemo(() => {
+    const pool = selectedCategory
+      ? getCardsForCategory(selectedCategory)
+      : filteredCards
+    if (!avoidRepeats) return pool
+    return pool.filter((card) => !usedCardIds.includes(card.id))
+  }, [selectedCategory, filteredCards, avoidRepeats, usedCardIds])
 
   const activeCard = useMemo(() => {
     return cards.find((card) => card.id === activeCardId) ?? null
@@ -135,8 +148,27 @@ function App() {
     setIsShuffling(true)
     shuffleTimer.current = window.setTimeout(() => {
       const pool = getCardsForCategory(categoryId)
-      const nextCard = pool[Math.floor(Math.random() * pool.length)]
+      if (pool.length === 0) {
+        setActiveCardId(null)
+        setIsShuffling(false)
+        return
+      }
+      let availablePool = pool
+      if (avoidRepeats) {
+        availablePool = pool.filter((card) => !usedCardIds.includes(card.id))
+        if (availablePool.length === 0) {
+          setUsedCardIds([])
+          availablePool = pool
+        }
+      }
+      const nextCard =
+        availablePool[Math.floor(Math.random() * availablePool.length)]
       setActiveCardId(nextCard?.id ?? null)
+      if (nextCard && avoidRepeats) {
+        setUsedCardIds((prev) =>
+          prev.includes(nextCard.id) ? prev : [...prev, nextCard.id],
+        )
+      }
       setIsShuffling(false)
     }, 720)
   }
@@ -236,6 +268,12 @@ function App() {
                 </Button>
               ))}
             </div>
+            <div className="flex items-center justify-between rounded-2xl border border-border bg-white/70 px-3 py-2">
+              <span className="text-xs font-medium text-muted-foreground">
+                {ui.avoidRepeats}
+              </span>
+              <Switch checked={avoidRepeats} onCheckedChange={setAvoidRepeats} />
+            </div>
           </div>
         </div>
       </header>
@@ -275,7 +313,7 @@ function App() {
         <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-muted-foreground">
           <div className="flex items-center gap-3">
             <Badge variant="outline" className="border-muted-foreground/40">
-              {filteredCards.length} {ui.cardsAvailable}
+              {availableCards.length} {ui.cardsAvailable}
             </Badge>
             {selectedGroups.length > 0 && (
               <span>{selectedGroups.join(', ')}</span>
