@@ -83,11 +83,12 @@ Acceptance:
 1. Documentation and data schema definition. (done)
 2. Implement card data model and seed dataset from OCR references. (done)
 3. Build CLI for listing, grouping, and adding cards. (done)
-4. Build UI with i18n and four-quadrant layout. (planned)
-5. Add shuffle and flip animations. (planned)
+4. Build UI with i18n and four-quadrant layout. (done)
+5. Add shuffle and flip animations. (done)
 6. Expand groups and add new content sets. (done)
 
 ## Open questions
-- Should group identifiers be English-only (stable IDs) with localized display strings?
-- Should OCR data be stored as a separate import or merged into the data seed?
-- What is the minimal card schema to allow partial translations?
+Resolved decisions:
+- Group identifiers are stable, lowercase slugs (ASCII). Display labels are localized per language.
+- OCR files stay only as historical references in `card_references/`. Production data lives in `src/data/store.json`.
+- Minimal schema for partial translations: `content` is keyed per language and `languages` lists available translations. Missing languages are allowed.
