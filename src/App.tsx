@@ -93,7 +93,7 @@ function App() {
           return false
         }
       }
-      return Boolean(card.content?.[language])
+      return Boolean(card.content?.[language as keyof typeof card.content])
     })
   }
 
@@ -110,7 +110,7 @@ function App() {
         selectedGroups.every((group) => card.groups.includes(group)),
       )
     }
-    pool = pool.filter((card) => Boolean(card.content?.[language]))
+    pool = pool.filter((card) => Boolean(card.content?.[language as keyof typeof card.content]))
     return pool
   }, [selectedCategory, selectedGroups, language])
 
@@ -131,10 +131,10 @@ function App() {
     return cardTypes.find((type) => type.id === activeCard.typeId) ?? null
   }, [activeCard])
 
-  const activeContent = activeCard?.content?.[language]
+  const activeContent = activeCard?.content?.[language as keyof typeof activeCard.content]
   const activeCategory = categories.find((c) => c.id === selectedCategory)
   const activeCategoryLabel =
-    activeCategory?.name?.[language] ?? activeCategory?.name?.es ?? selectedCategory
+    activeCategory?.name?.[language as keyof typeof activeCategory.name] ?? activeCategory?.name?.es ?? selectedCategory
   const activeCategoryColor = activeCategory
     ? `hsl(var(--${activeCategory.id}))`
     : 'hsl(var(--blue))'
@@ -282,7 +282,7 @@ function App() {
         <div className="grid min-h-[60vh] grid-cols-2 grid-rows-2 gap-4 md:min-h-[50vh]">
           {categories.map((category) => {
             const isActive = selectedCategory === category.id
-            const label = category.name[language] ?? category.name.es ?? category.id
+            const label = category.name[language as keyof typeof category.name] ?? category.name.es ?? category.id
             return (
               <button
                 key={category.id}
@@ -359,7 +359,7 @@ function App() {
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                          {activeType?.name?.[language] ?? activeType?.name?.es}
+                          {activeType?.name?.[language as keyof typeof activeType.name] ?? activeType?.name?.es}
                         </p>
                         <h2 className="font-display text-lg font-semibold">
                           {activeCategoryLabel}
@@ -375,10 +375,10 @@ function App() {
                     />
                     <Separator />
                     <div className="rounded-2xl bg-muted/70 p-3 text-xs text-muted-foreground">
-                      {activeType?.activity?.[language] ?? activeType?.activity?.es}
+                      {activeType?.activity?.[language as keyof typeof activeType.activity] ?? activeType?.activity?.es}
                     </div>
                     <div className="space-y-3 text-sm">
-                      {activeContent.blocks.map((block, index) => (
+                      {activeContent.blocks.map((block: any, index: number) => (
                         <div key={`${block.label}-${index}`} className="space-y-1">
                           {block.label && (
                             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
@@ -388,7 +388,7 @@ function App() {
                           {block.text && <p className="text-base">{block.text}</p>}
                           {block.list && (
                             <ul className="space-y-1">
-                              {block.list.map((item) => (
+                              {block.list.map((item: string) => (
                                 <li key={item} className="text-sm">
                                   {item}
                                 </li>
